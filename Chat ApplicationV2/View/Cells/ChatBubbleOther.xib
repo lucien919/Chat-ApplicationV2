@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatBubbleOther" rowHeight="81" id="CQw-ut-2Hq" customClass="ChatBubbleOther" customModule="Chat_ApplicationV2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CQw-ut-2Hq" id="1nB-7i-XuN">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NR-dT-bcb" customClass="ChatContentView" customModule="Chat_ApplicationV2" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="220" height="81"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayh-hh-hDF">
+                                <rect key="frame" x="8" y="8" width="204" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hU0-qd-zVX">
+                                <rect key="frame" x="0.0" y="66.5" width="220" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ayh-hh-hDF" firstAttribute="leading" secondItem="8NR-dT-bcb" secondAttribute="leading" constant="8" id="5zH-Gf-h2h"/>
+                            <constraint firstItem="hU0-qd-zVX" firstAttribute="leading" secondItem="8NR-dT-bcb" secondAttribute="leading" id="DWk-Rf-S9e"/>
+                            <constraint firstAttribute="bottom" secondItem="Ayh-hh-hDF" secondAttribute="bottom" constant="32" id="GEj-tl-jQd"/>
+                            <constraint firstItem="Ayh-hh-hDF" firstAttribute="top" secondItem="8NR-dT-bcb" secondAttribute="top" constant="8" id="LG0-vs-CpG"/>
+                            <constraint firstAttribute="trailing" secondItem="Ayh-hh-hDF" secondAttribute="trailing" constant="8" id="VCD-sh-CB3"/>
+                            <constraint firstAttribute="trailing" secondItem="hU0-qd-zVX" secondAttribute="trailing" id="a3j-Cp-Ham"/>
+                            <constraint firstAttribute="bottom" secondItem="hU0-qd-zVX" secondAttribute="bottom" id="ro0-24-Vae"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="StrokeColor">
+                                <color key="value" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="FillColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8NR-dT-bcb" firstAttribute="top" secondItem="1nB-7i-XuN" secondAttribute="top" id="4kz-kd-nQY"/>
+                    <constraint firstItem="8NR-dT-bcb" firstAttribute="leading" secondItem="1nB-7i-XuN" secondAttribute="leading" id="avG-EJ-JFS"/>
+                    <constraint firstAttribute="trailing" secondItem="8NR-dT-bcb" secondAttribute="trailing" constant="100" id="nqu-t8-cAd"/>
+                    <constraint firstAttribute="bottom" secondItem="8NR-dT-bcb" secondAttribute="bottom" id="nv0-Cr-l48"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="m9j-kK-dc5"/>
+            <connections>
+                <outlet property="bubble" destination="8NR-dT-bcb" id="U8K-Mn-pIk"/>
+                <outlet property="label" destination="Ayh-hh-hDF" id="O4h-zz-W2a"/>
+                <outlet property="name" destination="hU0-qd-zVX" id="Pds-Qb-FD9"/>
+            </connections>
+            <point key="canvasLocation" x="40" y="-6.5"/>
+        </tableViewCell>
+    </objects>
+</document>

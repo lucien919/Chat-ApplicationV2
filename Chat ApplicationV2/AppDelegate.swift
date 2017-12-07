@@ -8,14 +8,40 @@
 
 import UIKit
 import CoreData
+import SlideMenuControllerSwift
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var slideMenuController:SlideMenuController?
+    
+    func createMenu(){
 
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        guard let main = storyboard.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController else{return}
+        guard let left = storyboard.instantiateViewController(withIdentifier: "ChatSelectViewController") as? ChatSelectViewController else{return}
+        guard let right = storyboard.instantiateViewController(withIdentifier: "UserViewController") as? UserViewController else{return}
+
+        let nvc: UINavigationController = UINavigationController(rootViewController: main)
+        UINavigationBar.appearance().tintColor = UIColor.cyan
+        UIToolbar.appearance().tintColor = UIColor.magenta
+        left.mainViewController = nvc
+        nvc.navigationBar.barTintColor = UIColor.darkGray
+
+        self.slideMenuController = SlideMenuController(mainViewController: nvc, leftMenuViewController: left, rightMenuViewController: right)
+        //slideMenuController.delegate = main
+        //self.window?.rootViewController = slideMenuController
+        //self.window?.makeKeyAndVisible()
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
+        self.createMenu()
+        
         // Override point for customization after application launch.
         return true
     }
